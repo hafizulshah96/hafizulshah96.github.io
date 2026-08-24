@@ -1,0 +1,15 @@
+---
+title: "Articles & Thoughts"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  fields: [date, title, reading-time, description, categories]
+page-layout: full
+title-block-banner: true
+---
+
+Welcome to my digital space. Here, I write about computational physics, data science, artificial intelligence, and my personal perspectives on learning and technology.

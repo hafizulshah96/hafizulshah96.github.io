@@ -1,0 +1,25 @@
+---
+title: "Welcome to My Digital Corner"
+description: "Why I started this blog, the intersection of computational physics and data science, and what to expect."
+author: "Hafizul Shah"
+date: "2026-08-21"
+categories: [thoughts, introduction, data-science]
+---
+
+## The Journey Begins
+
+Welcome to my personal corner of the web. 
+
+For a long time, I have wanted a dedicated platform to document my learning, organize my personal views, and share deep dives into the topics that fascinate me.
+
+Coming from a background in **computational physics**—working with Density Functional Theory (DFT), high-performance computing clusters, and analyzing material structures—I have always been drawn to extracting meaning from data and understanding complex systems.
+
+## What to Expect Here
+
+As I deepen my focus into **Data Science and AI**, I plan to use this space for:
+
+1. **Technical Deep Dives:** Practical explorations of machine learning models, statistical methods, and computational workflows.
+2. **Physics & Simulation Insights:** Bridging concepts between physical simulation and modern data-driven approaches.
+3. **Personal Perspectives:** Honest reflections on career transitions, continuous learning, and technology trends.
+
+Stay tuned for more articles!

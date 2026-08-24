@@ -1,0 +1,28 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Hafizul Shah"
+  site-url: "https://hafizulshah96.github.io"
+  description: "Personal website, technical articles, and notes on Computational Physics, Data Science, and AI."
+  navbar:
+    right:
+      - text: "Home"
+        href: index.qmd
+      - text: "About"
+        href: about.qmd
+      - icon: github
+        href: https://github.com/hafizulshah96
+      - icon: linkedin
+        href: https://www.linkedin.com
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles.css
+    toc: true
+    code-fold: show
+    code-tools: true
