@@ -2,96 +2,93 @@
    Old London / Medieval Craftsmanship with Modern Functionality Design System
    ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   Light Mode (Default)
-   -------------------------------------------------------------------------- */
-:root,
-body,
-body.quarto-light {
-  --bg-primary: #F9F7F1;              /* Warm manuscript off-white/parchment */
-  --bg-secondary: #F2EDE2;            /* Soft vintage banner/panel */
-  --bg-card: #EFE8DC;                 /* Warm brownish container */
-  --bg-card-hover: #E7DECF;
-  --border-color: #D4C5B0;            /* Medieval parchment border */
-  --border-strong: #8C6A48;           /* Leather/aged craft border */
-  
-  --text-main: #2C2117;               /* Deep vintage dark brown */
-  --text-muted: #5E4B3C;              /* Antique brown */
-  --text-accent: #7A3E26;             /* Wax seal red-brown */
-  
-  --nav-bg: rgba(249, 247, 241, 0.96);
-  --tag-bg: #E3D9CA;
-  --tag-text: #3D2D20;
-  --tag-border: #C8B9A6;
-  --code-bg: #EAE2D4;
-}
-
-/* --------------------------------------------------------------------------
-   Dark Mode: Deep Dark Blue Background + White Text
-   -------------------------------------------------------------------------- */
-body.quarto-dark,
-[data-bs-theme="dark"],
-body[data-bs-theme="dark"],
-.quarto-dark {
-  --bg-primary: #0B192C !important;   /* Deep Dark Blue */
-  --bg-secondary: #132438 !important; /* Elegant Navy Blue */
-  --bg-card: #182C44 !important;      /* Soft/Dark Blue container */
-  --bg-card-hover: #203A58 !important;
-  --border-color: #2F4866 !important; /* Steel blue border */
-  --border-strong: #6D94C0 !important;
-  
-  --text-main: #FFFFFF !important;    /* Pure / Crisp White Text */
-  --text-muted: #D1DFEC !important;   /* Soft Ice White */
-  --text-accent: #E8D3A2 !important;  /* Antique illuminated gold */
-  
-  --nav-bg: rgba(11, 25, 44, 0.96) !important;
-  --tag-bg: #1B3350 !important;
-  --tag-text: #FFFFFF !important;
-  --tag-border: #3B5A7E !important;
-  --code-bg: #132438 !important;
-}
-
-/* Typography definition */
 :root {
   --font-serif: "Times New Roman", Times, "Liberation Serif", "Nimbus Roman No9 L", Georgia, serif;
   --font-blackletter: 'UnifrakturMaguntia', "Old English Text MT", "Fraktur", "Cloister Black", serif;
 }
 
 /* --------------------------------------------------------------------------
-   Global Layout & Typography
+   Light Theme Base & Variables
    -------------------------------------------------------------------------- */
-html, body {
-  background-color: var(--bg-primary) !important;
-  color: var(--text-main) !important;
+body.quarto-light,
+body:not(.quarto-dark) {
+  --site-bg: #F9F7F1;
+  --site-bg-banner: #F2EDE2;
+  --site-card-bg: #EFE8DC;
+  --site-card-hover: #E7DECF;
+  --site-border: #D4C5B0;
+  --site-border-strong: #8C6A48;
+  --site-text: #2C2117;
+  --site-muted: #5E4B3C;
+  --site-accent: #7A3E26;
+  --site-tag-bg: #E3D9CA;
+  --site-tag-text: #3D2D20;
+  --site-tag-border: #C8B9A6;
+  --site-code-bg: #EAE2D4;
+}
+
+/* --------------------------------------------------------------------------
+   Dark Theme Base & Variables (Deep Dark Blue + Pure White Text)
+   -------------------------------------------------------------------------- */
+body.quarto-dark {
+  --site-bg: #0B192C !important;
+  --site-bg-banner: #102138 !important;
+  --site-card-bg: #182C44 !important;
+  --site-card-hover: #203A58 !important;
+  --site-border: #2F4866 !important;
+  --site-border-strong: #6D94C0 !important;
+  --site-text: #FFFFFF !important;
+  --site-muted: #D1DFEC !important;
+  --site-accent: #E8D3A2 !important;
+  --site-tag-bg: #1B3350 !important;
+  --site-tag-text: #FFFFFF !important;
+  --site-tag-border: #3B5A7E !important;
+  --site-code-bg: #132438 !important;
+}
+
+/* Global Background and Text Color Enforcements */
+html, body,
+body.quarto-light,
+body.quarto-dark {
+  background-color: var(--site-bg) !important;
+  color: var(--site-text) !important;
   font-family: var(--font-serif) !important;
   font-size: 1.08rem;
   line-height: 1.75;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
+/* Quarto & Bootstrap Container Overrides in Dark Mode */
+body.quarto-dark #quarto-content,
+body.quarto-dark .page-columns,
+body.quarto-dark main,
+body.quarto-dark .content {
+  background-color: var(--site-bg) !important;
+  color: var(--site-text) !important;
+}
+
 /* Headings */
 h1, h2, h3, h4, h5, h6,
 .title, .quarto-title, .navbar-title {
   font-family: var(--font-serif) !important;
-  color: var(--text-main) !important;
+  color: var(--site-text) !important;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
 
 h1 {
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--site-border);
   padding-bottom: 0.4rem;
   margin-top: 1.5rem;
   margin-bottom: 1.2rem;
 }
 
 h2 {
-  border-bottom: 1px dashed var(--border-color);
+  border-bottom: 1px dashed var(--site-border);
   padding-bottom: 0.3rem;
   margin-top: 1.8rem;
 }
 
-/* Paragraphs, list items, and descriptions */
 p, li, span, div, .description, .lead {
   color: inherit;
 }
@@ -103,7 +100,7 @@ p, li, span, div, .description, .lead {
   font-family: var(--font-blackletter) !important;
   font-size: 2.3rem !important;
   letter-spacing: 0.12em !important;
-  color: var(--text-main) !important;
+  color: var(--site-text) !important;
   font-weight: normal !important;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
   transition: color 0.2s ease, transform 0.2s ease;
@@ -111,28 +108,30 @@ p, li, span, div, .description, .lead {
 }
 
 .navbar-brand:hover .navbar-title {
-  color: var(--text-accent) !important;
+  color: var(--site-accent) !important;
   transform: scale(1.04);
 }
 
 /* --------------------------------------------------------------------------
-   Navigation Bar & Spacing
+   Navigation Bar & Wide Spacing
    -------------------------------------------------------------------------- */
-.navbar {
-  background: var(--nav-bg) !important;
+.navbar,
+body.quarto-dark .navbar,
+body.quarto-light .navbar {
+  background-color: var(--site-bg) !important;
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-color) !important;
+  border-bottom: 1px solid var(--site-border) !important;
   padding: 0.85rem 2rem !important;
   position: sticky;
   top: 0;
   z-index: 1030;
-  transition: background 0.25s ease, border-color 0.25s ease;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .navbar-nav {
-  margin-left: auto !important;       /* Shift category links to the right */
+  margin-left: auto !important;       /* Shift category links far right */
   align-items: center;
-  gap: 1.8rem;                       /* Wide modern spacing */
+  gap: 1.8rem;                       /* Wide spacious navigation gaps */
 }
 
 .navbar-nav .nav-item {
@@ -145,7 +144,7 @@ p, li, span, div, .description, .lead {
   font-weight: 600 !important;
   letter-spacing: 0.06em !important;
   text-transform: uppercase;
-  color: var(--text-main) !important;
+  color: var(--site-text) !important;
   padding: 0.45rem 0.9rem !important;
   border-radius: 4px;
   position: relative;
@@ -159,13 +158,13 @@ p, li, span, div, .description, .lead {
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: var(--text-accent);
+  background-color: var(--site-accent);
   transition: all 0.25s ease;
   transform: translateX(-50%);
 }
 
 .navbar-nav .nav-link:hover {
-  color: var(--text-accent) !important;
+  color: var(--site-accent) !important;
 }
 
 .navbar-nav .nav-link:hover::after {
@@ -173,55 +172,60 @@ p, li, span, div, .description, .lead {
 }
 
 .quarto-color-scheme-toggle {
-  color: var(--text-main) !important;
+  color: var(--site-text) !important;
   font-size: 1.15rem;
   padding: 0.35rem 0.6rem;
   border-radius: 4px;
 }
 
 /* --------------------------------------------------------------------------
-   Title Block Banner & Post Header
+   Title Block Banner
    -------------------------------------------------------------------------- */
-.quarto-title-banner {
-  background: var(--bg-secondary) !important;
-  border-bottom: 1px solid var(--border-color) !important;
+.quarto-title-banner,
+body.quarto-dark .quarto-title-banner {
+  background-color: var(--site-bg-banner) !important;
+  border-bottom: 1px solid var(--site-border) !important;
   padding: 3rem 1.5rem 2.5rem 1.5rem !important;
   margin-bottom: 2rem !important;
 }
 
 .quarto-title-banner .title {
   font-size: 2.5rem;
-  color: var(--text-main) !important;
+  color: var(--site-text) !important;
 }
 
 /* --------------------------------------------------------------------------
    Cards / Article Listings
    -------------------------------------------------------------------------- */
-.quarto-post {
-  background-color: var(--bg-card) !important;
-  border: 1px solid var(--border-color) !important;
+.quarto-post,
+body.quarto-dark .quarto-post,
+body.quarto-light .quarto-post {
+  background-color: var(--site-card-bg) !important;
+  border: 1px solid var(--site-border) !important;
   border-radius: 6px;
   padding: 1.6rem 2rem !important;
   margin-bottom: 1.75rem !important;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
 }
 
-.quarto-post:hover {
+.quarto-post:hover,
+body.quarto-dark .quarto-post:hover {
   transform: translateY(-3px);
-  background-color: var(--bg-card-hover) !important;
-  border-color: var(--border-strong) !important;
+  background-color: var(--site-card-hover) !important;
+  border-color: var(--site-border-strong) !important;
 }
 
 .quarto-post .listing-title {
   font-family: var(--font-serif) !important;
   font-size: 1.45rem;
   font-weight: 700;
-  color: var(--text-main) !important;
+  color: var(--site-text) !important;
   margin-bottom: 0.4rem;
 }
 
 .quarto-post .listing-description {
-  color: var(--text-muted) !important;
+  color: var(--site-muted) !important;
   font-size: 1.02rem;
   line-height: 1.65;
   margin-bottom: 0.8rem;
@@ -230,21 +234,22 @@ p, li, span, div, .description, .lead {
 .quarto-post .listing-date {
   font-style: italic;
   font-size: 0.95rem;
-  color: var(--text-muted) !important;
+  color: var(--site-muted) !important;
 }
 
 /* --------------------------------------------------------------------------
    Tags & Badges
    -------------------------------------------------------------------------- */
 .quarto-listing-category,
-.quarto-category {
+.quarto-category,
+body.quarto-dark .quarto-category {
   font-family: var(--font-serif) !important;
   font-size: 0.85rem !important;
   text-transform: lowercase;
   font-style: italic;
-  background-color: var(--tag-bg) !important;
-  color: var(--tag-text) !important;
-  border: 1px solid var(--tag-border) !important;
+  background-color: var(--site-tag-bg) !important;
+  color: var(--site-tag-text) !important;
+  border: 1px solid var(--site-tag-border) !important;
   padding: 0.25rem 0.75rem !important;
   border-radius: 3px !important;
   margin-right: 0.4rem;
@@ -253,9 +258,9 @@ p, li, span, div, .description, .lead {
 
 .quarto-listing-category:hover,
 .quarto-category:hover {
-  background-color: var(--text-accent) !important;
+  background-color: var(--site-accent) !important;
   color: #000000 !important;
-  border-color: var(--text-accent) !important;
+  border-color: var(--site-accent) !important;
 }
 
 .quarto-listing-category-title {
@@ -263,8 +268,8 @@ p, li, span, div, .description, .lead {
   font-size: 1.15rem !important;
   font-weight: 700 !important;
   text-transform: uppercase;
-  color: var(--text-main) !important;
-  border-bottom: 1px solid var(--border-color) !important;
+  color: var(--site-text) !important;
+  border-bottom: 1px solid var(--site-border) !important;
   padding-bottom: 0.4rem;
   margin-bottom: 0.75rem;
 }
@@ -272,26 +277,28 @@ p, li, span, div, .description, .lead {
 /* --------------------------------------------------------------------------
    About Page
    -------------------------------------------------------------------------- */
-.about-entity {
-  background-color: var(--bg-card) !important;
-  border: 1px solid var(--border-color) !important;
+.about-entity,
+body.quarto-dark .about-entity {
+  background-color: var(--site-card-bg) !important;
+  border: 1px solid var(--site-border) !important;
   border-radius: 8px;
   padding: 2.5rem;
 }
 
 .about-entity img {
-  border: 2px solid var(--border-strong) !important;
+  border: 2px solid var(--site-border-strong) !important;
   padding: 4px;
-  background-color: var(--bg-primary) !important;
+  background-color: var(--site-bg) !important;
 }
 
-.about-link {
+.about-link,
+body.quarto-dark .about-link {
   font-family: var(--font-serif) !important;
   font-weight: 600;
   text-transform: uppercase;
-  background-color: var(--bg-primary) !important;
-  border: 1px solid var(--border-color) !important;
-  color: var(--text-main) !important;
+  background-color: var(--site-bg) !important;
+  border: 1px solid var(--site-border) !important;
+  color: var(--site-text) !important;
   padding: 0.55rem 1.25rem !important;
   border-radius: 4px;
   margin: 0.35rem !important;
@@ -299,9 +306,9 @@ p, li, span, div, .description, .lead {
 }
 
 .about-link:hover {
-  background-color: var(--text-accent) !important;
+  background-color: var(--site-accent) !important;
   color: #000000 !important;
-  border-color: var(--text-accent) !important;
+  border-color: var(--site-accent) !important;
   text-decoration: none;
 }
 
@@ -309,13 +316,13 @@ p, li, span, div, .description, .lead {
    Links, Code, & Table of Contents
    -------------------------------------------------------------------------- */
 a {
-  color: var(--text-accent) !important;
+  color: var(--site-accent) !important;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 a:hover {
-  color: var(--text-main) !important;
+  color: var(--site-text) !important;
   text-decoration: underline;
 }
 
@@ -323,39 +330,40 @@ pre, code {
   font-family: "Courier New", Courier, monospace !important;
 }
 
-pre {
-  background-color: var(--code-bg) !important;
-  border: 1px solid var(--border-color) !important;
-  border-left: 4px solid var(--border-strong) !important;
+pre,
+body.quarto-dark pre {
+  background-color: var(--site-code-bg) !important;
+  border: 1px solid var(--site-border) !important;
+  border-left: 4px solid var(--site-border-strong) !important;
   border-radius: 4px;
   padding: 1.1rem !important;
-  color: var(--text-main) !important;
+  color: var(--site-text) !important;
 }
 
 #TOC {
-  border-left: 1px solid var(--border-color) !important;
+  border-left: 1px solid var(--site-border) !important;
   padding-left: 1.2rem;
 }
 
 #TOC h2 {
-  color: var(--text-main) !important;
+  color: var(--site-text) !important;
   border-bottom: none !important;
 }
 
 #TOC li a {
-  color: var(--text-muted) !important;
+  color: var(--site-muted) !important;
 }
 
 #TOC li a.active, #TOC li a:hover {
-  color: var(--text-accent) !important;
+  color: var(--site-accent) !important;
   font-weight: 600;
 }
 
 footer {
-  border-top: 1px solid var(--border-color) !important;
+  border-top: 1px solid var(--site-border) !important;
   padding: 2rem 0;
   margin-top: 3.5rem;
   text-align: center;
-  color: var(--text-muted) !important;
+  color: var(--site-muted) !important;
   font-style: italic;
 }

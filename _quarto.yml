@@ -22,8 +22,8 @@ website:
 format:
   html:
     theme:
-      light: cosmo
-      dark: darkly
+      light: [cosmo, custom-light.scss]
+      dark: [darkly, custom-dark.scss]
     css: styles.css
     toc: true
     code-fold: show
