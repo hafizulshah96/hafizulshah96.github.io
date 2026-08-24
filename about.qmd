@@ -1,5 +1,5 @@
 ---
-title: "About Me"
+title: "About"
 image: profile.jpg
 about:
   template: jolla
@@ -15,8 +15,8 @@ about:
       href: mailto:hafizulshah96@gmail.com
 ---
 
-Hello! I am **Hafizul Shah**. 
+Hello! I am **Muhammad Hafizul Shah**.
 
-I hold an M.Sc. in Physics with a background in computational materials (DFT / CASTEP, HPC environments, and structural analysis). I am currently focused on expanding into **Data Science, Machine Learning, and AI**.
+I hold an M.Sc. in Physics with a focus on computational materials (DFT / CASTEP, HPC environments, and structural analysis). I am currently focused on advancing into **Data Science, Machine Learning, and Artificial Intelligence**.
 
-This website serves as my public notebook, technical archive, and platform for sharing my views and deep-dives on computational science, technology, and career growth.
+This website serves as my digital notebook, technical archive, and platform for exploring the intersection of physical principles, computational methods, and modern machine learning.

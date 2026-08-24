@@ -3,12 +3,14 @@ project:
   output-dir: _site
 
 website:
-  title: "Hafizul Shah"
+  title: "MHS"
   site-url: "https://hafizulshah96.github.io"
   description: "Personal website, technical articles, and notes on Computational Physics, Data Science, and AI."
   navbar:
     right:
       - text: "Home"
+        href: index.qmd
+      - text: "Articles"
         href: index.qmd
       - text: "About"
         href: about.qmd
@@ -26,3 +28,8 @@ format:
     toc: true
     code-fold: show
     code-tools: true
+    include-in-header:
+      text: |
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
