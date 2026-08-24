@@ -2,69 +2,74 @@
    Old London / Medieval Craftsmanship with Modern Functionality Design System
    ========================================================================== */
 
-:root {
-  /* Fonts */
-  --font-serif: "Times New Roman", Times, "Liberation Serif", "Nimbus Roman No9 L", Georgia, serif;
-  --font-blackletter: 'UnifrakturMaguntia', "Old English Text MT", "Fraktur", "Cloister Black", serif;
-  --font-title-accent: 'Cinzel', "Times New Roman", serif;
-
-  /* Light Mode Palette (Default): Off-white, soft brownish containers, dark brown text */
+/* --------------------------------------------------------------------------
+   Light Mode (Default)
+   -------------------------------------------------------------------------- */
+:root,
+body,
+body.quarto-light {
   --bg-primary: #F9F7F1;              /* Warm manuscript off-white/parchment */
-  --bg-secondary: #F2EDE2;            /* Slightly deeper tone for banners/footers */
-  --bg-card: #EFE8DC;                 /* Soft warm brownish container */
-  --bg-card-hover: #E7DECF;           /* Hover accent */
-  --border-color: #D4C5B0;            /* Delicate medieval border rule */
-  --border-strong: #8C6A48;           /* Rich leather/craft border */
+  --bg-secondary: #F2EDE2;            /* Soft vintage banner/panel */
+  --bg-card: #EFE8DC;                 /* Warm brownish container */
+  --bg-card-hover: #E7DECF;
+  --border-color: #D4C5B0;            /* Medieval parchment border */
+  --border-strong: #8C6A48;           /* Leather/aged craft border */
   
-  --text-main: #2C2117;               /* Deep vintage dark brown/iron gall ink */
-  --text-muted: #5E4B3C;              /* Muted antique brown */
-  --text-accent: #7A3E26;             /* Terracotta / Wax seal red-brown */
+  --text-main: #2C2117;               /* Deep vintage dark brown */
+  --text-muted: #5E4B3C;              /* Antique brown */
+  --text-accent: #7A3E26;             /* Wax seal red-brown */
   
-  --nav-bg: rgba(249, 247, 241, 0.94);
+  --nav-bg: rgba(249, 247, 241, 0.96);
   --tag-bg: #E3D9CA;
   --tag-text: #3D2D20;
   --tag-border: #C8B9A6;
   --code-bg: #EAE2D4;
-  --shadow-subtle: 0 4px 20px rgba(44, 33, 23, 0.05);
-  --shadow-card: 0 6px 24px rgba(44, 33, 23, 0.07);
 }
 
-/* Dark Mode Palette: Deep dark blue, muted off-white/cream containers, off-white text */
+/* --------------------------------------------------------------------------
+   Dark Mode: Deep Dark Blue Background + White Text
+   -------------------------------------------------------------------------- */
+body.quarto-dark,
 [data-bs-theme="dark"],
-.dark-mode,
-body.dark {
-  --bg-primary: #0A1118;              /* Deep historic midnight/dark blue */
-  --bg-secondary: #0F1924;            /* Slate dark blue container background */
-  --bg-card: #152230;                 /* Deep ink blue container */
-  --bg-card-hover: #1D2E42;           /* Subtle illumination on hover */
-  --border-color: #273A4F;            /* Muted slate blue border */
-  --border-strong: #8FAEC9;           /* Etched silver / weathered steel */
+body[data-bs-theme="dark"],
+.quarto-dark {
+  --bg-primary: #0B192C !important;   /* Deep Dark Blue */
+  --bg-secondary: #132438 !important; /* Elegant Navy Blue */
+  --bg-card: #182C44 !important;      /* Soft/Dark Blue container */
+  --bg-card-hover: #203A58 !important;
+  --border-color: #2F4866 !important; /* Steel blue border */
+  --border-strong: #6D94C0 !important;
   
-  --text-main: #F4EFE6;               /* Clean parchment off-white */
-  --text-muted: #B8C6D4;              /* Soft lunar gray-blue */
-  --text-accent: #D8BD8A;             /* Antique illuminated gold */
+  --text-main: #FFFFFF !important;    /* Pure / Crisp White Text */
+  --text-muted: #D1DFEC !important;   /* Soft Ice White */
+  --text-accent: #E8D3A2 !important;  /* Antique illuminated gold */
   
-  --nav-bg: rgba(10, 17, 24, 0.94);
-  --tag-bg: #1B2B3D;
-  --tag-text: #EFE8DC;
-  --tag-border: #334A63;
-  --code-bg: #121E2C;
-  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.4);
-  --shadow-card: 0 6px 24px rgba(0, 0, 0, 0.5);
+  --nav-bg: rgba(11, 25, 44, 0.96) !important;
+  --tag-bg: #1B3350 !important;
+  --tag-text: #FFFFFF !important;
+  --tag-border: #3B5A7E !important;
+  --code-bg: #132438 !important;
 }
 
-/* Global Reset & Base Typography */
+/* Typography definition */
+:root {
+  --font-serif: "Times New Roman", Times, "Liberation Serif", "Nimbus Roman No9 L", Georgia, serif;
+  --font-blackletter: 'UnifrakturMaguntia', "Old English Text MT", "Fraktur", "Cloister Black", serif;
+}
+
+/* --------------------------------------------------------------------------
+   Global Layout & Typography
+   -------------------------------------------------------------------------- */
 html, body {
   background-color: var(--bg-primary) !important;
   color: var(--text-main) !important;
   font-family: var(--font-serif) !important;
   font-size: 1.08rem;
   line-height: 1.75;
-  letter-spacing: 0.01em;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-/* Headings & Title Typography */
+/* Headings */
 h1, h2, h3, h4, h5, h6,
 .title, .quarto-title, .navbar-title {
   font-family: var(--font-serif) !important;
@@ -86,14 +91,21 @@ h2 {
   margin-top: 1.8rem;
 }
 
-/* Branding: Old London Blackletter "MHS" */
+/* Paragraphs, list items, and descriptions */
+p, li, span, div, .description, .lead {
+  color: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   Branding: Old London Blackletter "MHS"
+   -------------------------------------------------------------------------- */
 .navbar-brand .navbar-title {
   font-family: var(--font-blackletter) !important;
   font-size: 2.3rem !important;
   letter-spacing: 0.12em !important;
   color: var(--text-main) !important;
   font-weight: normal !important;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
   transition: color 0.2s ease, transform 0.2s ease;
   padding-top: 2px;
 }
@@ -103,22 +115,24 @@ h2 {
   transform: scale(1.04);
 }
 
-/* Modern & Spaced Navigation Bar */
+/* --------------------------------------------------------------------------
+   Navigation Bar & Spacing
+   -------------------------------------------------------------------------- */
 .navbar {
   background: var(--nav-bg) !important;
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color) !important;
   padding: 0.85rem 2rem !important;
-  box-shadow: var(--shadow-subtle);
   position: sticky;
   top: 0;
   z-index: 1030;
+  transition: background 0.25s ease, border-color 0.25s ease;
 }
 
 .navbar-nav {
-  margin-left: auto !important;       /* Shift category links far right */
+  margin-left: auto !important;       /* Shift category links to the right */
   align-items: center;
-  gap: 1.8rem;                       /* Significantly increased spacing between items */
+  gap: 1.8rem;                       /* Wide modern spacing */
 }
 
 .navbar-nav .nav-item {
@@ -132,7 +146,7 @@ h2 {
   letter-spacing: 0.06em !important;
   text-transform: uppercase;
   color: var(--text-main) !important;
-  padding: 0.45rem 0.9rem !important; /* Increased padding */
+  padding: 0.45rem 0.9rem !important;
   border-radius: 4px;
   position: relative;
   transition: all 0.25s ease;
@@ -158,47 +172,43 @@ h2 {
   width: 80%;
 }
 
-/* Links & Accents */
-a {
-  color: var(--text-accent);
-  text-decoration: none;
-  transition: color 0.2s ease, border-bottom 0.2s ease;
+.quarto-color-scheme-toggle {
+  color: var(--text-main) !important;
+  font-size: 1.15rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 4px;
 }
 
-a:hover {
-  color: var(--text-main);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-}
-
-/* Title Block Banner */
+/* --------------------------------------------------------------------------
+   Title Block Banner & Post Header
+   -------------------------------------------------------------------------- */
 .quarto-title-banner {
   background: var(--bg-secondary) !important;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color) !important;
   padding: 3rem 1.5rem 2.5rem 1.5rem !important;
   margin-bottom: 2rem !important;
 }
 
 .quarto-title-banner .title {
   font-size: 2.5rem;
-  letter-spacing: 0.04em;
   color: var(--text-main) !important;
 }
 
-/* Modern Card / Listing Styles (Medieval Manuscript container) */
+/* --------------------------------------------------------------------------
+   Cards / Article Listings
+   -------------------------------------------------------------------------- */
 .quarto-post {
   background-color: var(--bg-card) !important;
   border: 1px solid var(--border-color) !important;
   border-radius: 6px;
   padding: 1.6rem 2rem !important;
   margin-bottom: 1.75rem !important;
-  box-shadow: var(--shadow-card);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
 }
 
 .quarto-post:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+  background-color: var(--bg-card-hover) !important;
   border-color: var(--border-strong) !important;
 }
 
@@ -223,7 +233,9 @@ a:hover {
   color: var(--text-muted) !important;
 }
 
-/* Categories & Badges */
+/* --------------------------------------------------------------------------
+   Tags & Badges
+   -------------------------------------------------------------------------- */
 .quarto-listing-category,
 .quarto-category {
   font-family: var(--font-serif) !important;
@@ -242,7 +254,7 @@ a:hover {
 .quarto-listing-category:hover,
 .quarto-category:hover {
   background-color: var(--text-accent) !important;
-  color: #FFF !important;
+  color: #000000 !important;
   border-color: var(--text-accent) !important;
 }
 
@@ -251,33 +263,32 @@ a:hover {
   font-size: 1.15rem !important;
   font-weight: 700 !important;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  border-bottom: 1px solid var(--border-color);
+  color: var(--text-main) !important;
+  border-bottom: 1px solid var(--border-color) !important;
   padding-bottom: 0.4rem;
   margin-bottom: 0.75rem;
 }
 
-/* About Page Styling */
+/* --------------------------------------------------------------------------
+   About Page
+   -------------------------------------------------------------------------- */
 .about-entity {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
   border-radius: 8px;
   padding: 2.5rem;
-  box-shadow: var(--shadow-card);
 }
 
 .about-entity img {
-  border: 2px solid var(--border-strong);
+  border: 2px solid var(--border-strong) !important;
   padding: 4px;
-  background-color: var(--bg-primary);
-  box-shadow: var(--shadow-subtle);
+  background-color: var(--bg-primary) !important;
 }
 
 .about-link {
   font-family: var(--font-serif) !important;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
   background-color: var(--bg-primary) !important;
   border: 1px solid var(--border-color) !important;
   color: var(--text-main) !important;
@@ -289,12 +300,25 @@ a:hover {
 
 .about-link:hover {
   background-color: var(--text-accent) !important;
-  color: #FFF !important;
+  color: #000000 !important;
   border-color: var(--text-accent) !important;
   text-decoration: none;
 }
 
-/* Code Blocks with Vintage Script Frame */
+/* --------------------------------------------------------------------------
+   Links, Code, & Table of Contents
+   -------------------------------------------------------------------------- */
+a {
+  color: var(--text-accent) !important;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--text-main) !important;
+  text-decoration: underline;
+}
+
 pre, code {
   font-family: "Courier New", Courier, monospace !important;
 }
@@ -305,47 +329,33 @@ pre {
   border-left: 4px solid var(--border-strong) !important;
   border-radius: 4px;
   padding: 1.1rem !important;
-  box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
+  color: var(--text-main) !important;
 }
 
-/* Table of Contents & Sidebar */
 #TOC {
-  border-left: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color) !important;
   padding-left: 1.2rem;
 }
 
 #TOC h2 {
-  font-size: 1.05rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  border-bottom: none;
-  margin-top: 0;
+  color: var(--text-main) !important;
+  border-bottom: none !important;
 }
 
 #TOC li a {
-  color: var(--text-muted);
+  color: var(--text-muted) !important;
 }
 
 #TOC li a.active, #TOC li a:hover {
-  color: var(--text-accent);
+  color: var(--text-accent) !important;
   font-weight: 600;
 }
 
-/* Footer / Metadata */
 footer {
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color) !important;
   padding: 2rem 0;
   margin-top: 3.5rem;
   text-align: center;
-  color: var(--text-muted);
+  color: var(--text-muted) !important;
   font-style: italic;
-  font-size: 0.95rem;
-}
-
-/* Search Modal & Input */
-.aa-Input, input[type="search"] {
-  font-family: var(--font-serif) !important;
-  background-color: var(--bg-primary) !important;
-  border: 1px solid var(--border-color) !important;
-  color: var(--text-main) !important;
 }
