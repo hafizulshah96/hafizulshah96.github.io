@@ -359,6 +359,33 @@ body.quarto-dark pre {
   font-weight: 600;
 }
 
+/* Article Content Alignment & Typography */
+.quarto-title-block,
+main.content,
+.content main,
+article,
+.quarto-post,
+.page-columns .content,
+.quarto-body,
+section.level1,
+section.level2,
+section.level3,
+section.level4 {
+  /* Keep container clean */
+}
+
+/* Justify article body text across all current and future posts */
+main.content p,
+.page-columns .content p,
+article p,
+.quarto-body p,
+.quarto-post .body p,
+.description p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
 footer {
   border-top: 1px solid var(--site-border) !important;
   padding: 2rem 0;
